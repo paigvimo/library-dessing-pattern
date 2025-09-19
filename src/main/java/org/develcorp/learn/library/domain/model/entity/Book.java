@@ -1,12 +1,17 @@
-package org.develcorp.learn.library.domain.model;
+package org.develcorp.learn.library.domain.model.entity;
+
+
+import org.develcorp.learn.library.domain.model.entity.enum.BookFormat;
+import org.develcorp.learn.library.domain.model.entity.enum.BookStatus;
+import org.develcorp.learn.library.domain.model.entity.enum.BookType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * Book entity representing a book in the library system.

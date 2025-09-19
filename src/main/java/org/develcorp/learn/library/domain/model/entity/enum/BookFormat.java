@@ -1,4 +1,4 @@
-package org.develcorp.learn.library.domain.model;
+package org.develcorp.learn.library.domain.model.entity.enums;
 
 /**
  * Enum representing the format of books.

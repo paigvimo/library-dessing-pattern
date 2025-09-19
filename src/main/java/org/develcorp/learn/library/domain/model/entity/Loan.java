@@ -1,4 +1,4 @@
-package org.develcorp.learn.library.domain.model;
+package org.develcorp.learn.library.domain.model.entity;
 
 import java.time.LocalDate;
 

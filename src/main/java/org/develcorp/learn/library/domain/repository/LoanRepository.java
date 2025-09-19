@@ -1,6 +1,6 @@
 package org.develcorp.learn.library.domain.repository;
 
-import org.develcorp.learn.library.domain.model.Loan;
+import org.develcorp.learn.library.domain.model.entity.Loan;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import reactor.core.publisher.Flux;
