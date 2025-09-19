@@ -20,18 +20,15 @@ public class DatabaseConnection {
     private final ConnectionPool connectionPool;
 
     private DatabaseConnection(DatabaseConfig databaseConfig) {
-
-        // Configure the ConnectionFactory for H2 using DatabaseConfig
         ConnectionFactory connectionFactory = ConnectionFactories.get(ConnectionFactoryOptions.builder()
             .option(ConnectionFactoryOptions.DRIVER, databaseConfig.getDriver())
             .option(ConnectionFactoryOptions.PROTOCOL, databaseConfig.getProtocol())
             .option(ConnectionFactoryOptions.DATABASE, databaseConfig.getDatabase())
             .build());
 
-        // Configure the ConnectionPool
         ConnectionPoolConfiguration configuration = ConnectionPoolConfiguration.builder(connectionFactory)
             .maxIdleTime(java.time.Duration.ofMinutes(30)) // Maximum idle time
-            .maxSize(10) // Maximum pool size
+            .maxSize(10)
             .build();
 
         this.connectionPool = new ConnectionPool(configuration);

@@ -20,16 +20,16 @@ Generar código que respete la arquitectura hexagonal, separando claramente las 
 - Contiene la lógica de negocio pura.
 - Clases:
   - Entidades
-  - Value Objects
-  - Interfaces de repositorios (Ports)
-  - Interfaces de servicios (Ports)
+  - Modelo de base de datos
+  - Enums
+  - Entidades de configuraciónn de Beans
+  - Excepciones personalizadas
 
 ### 2. **Application**
 - Orquesta los casos de uso.
 - Clases:
   - Servicios de aplicación
-  - DTOs
-  - Mappers
+  - Puertos
   - Validadores
 
 ### 3. **Infrastructure**
@@ -39,14 +39,15 @@ Generar código que respete la arquitectura hexagonal, separando claramente las 
   - Controladores REST
   - Configuraciones
   - Adaptadores de entrada/salida
+  - Dtos
+  - Mappers
 
-### 4. **Base**
+### 4. **Shared**
 - Utilidades compartidas.
 - Clases:
   - Excepciones
   - Utilitarios
   - Clases comunes
-  - Configuración base
 
 ---
 
@@ -58,29 +59,32 @@ src/
     └── java/
         └── com/
             └── ejemplo/
-                ├── base/
-                │   ├── config/
-                │   ├── exception/
+                ├── shared/
+                │   ├── constant/
                 │   └── util/
                 │
                 ├── domain/
                 │   ├── model/
-                │   ├── port/
-                │   │   ├── in/
-                │   │   └── out/
-                │   └── service/
+                │   │   └── entity/
+                │   │       └── enum/
+                │   ├── config/
+                │   └── exception/
                 │
                 ├── application/
+                │   ├── port/
+                │   │    ├── input/
+                │   │    └── output/
                 │   ├── service/
-                │   ├── dto/
-                │   ├── mapper/
                 │   └── validator/
                 │
                 └── infrastructure/
-                    ├── adapter/
-                    │   ├── in/
-                    │   │   └── rest/
-                    │   └── out/
-                    │       └── persistence/
-                    ├── config/
-                    └── repository/
+                    └─── adapter/
+                        ├── input/
+                        |   ├── mapper/
+                        |   ├── dto/
+                        |   ├── config/
+                        │   └── rest/
+                        └── output/
+                            ├── config/
+                            ├── dto/
+                            └── repository/
