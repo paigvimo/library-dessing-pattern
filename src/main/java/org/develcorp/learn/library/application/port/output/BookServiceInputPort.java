@@ -1,6 +1,6 @@
-package org.develcorp.learn.library.domain.port;
+package org.develcorp.learn.library.application.port.output;
 
-import org.develcorp.learn.library.domain.model.Book;
+import org.develcorp.learn.library.domain.model.entity.Book;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 /**
  * Port interface for Book service operations.
  */
-public interface BookServicePort {
+public interface BookServiceInputPort {
 
     /**
      * Save a book.

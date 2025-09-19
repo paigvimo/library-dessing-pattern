@@ -1,4 +1,4 @@
-package org.develcorp.learn.library.domain.repository;
+package org.develcorp.learn.library.infrastructure.adapter.output.repository;
 
 import org.develcorp.learn.library.domain.model.entity.Loan;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

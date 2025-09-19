@@ -1,8 +1,8 @@
 package org.develcorp.learn.library.application.service;
 
-import org.develcorp.learn.library.domain.model.Book;
-import org.develcorp.learn.library.domain.port.BookServicePort;
-import org.develcorp.learn.library.domain.repository.BookRepository;
+import org.develcorp.learn.library.application.port.output.BookServiceInputPort;
+import org.develcorp.learn.library.domain.model.entity.Book;
+import org.develcorp.learn.library.infrastructure.adapter.output.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 import reactor.core.publisher.Flux;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
  * Service implementation for Book operations.
  */
 @Service
-public class BookService implements BookServicePort {
+public class BookService implements BookServiceInputPort {
 
     private final BookRepository bookRepository;
 

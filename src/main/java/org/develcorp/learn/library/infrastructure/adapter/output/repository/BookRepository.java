@@ -1,6 +1,6 @@
-package org.develcorp.learn.library.domain.repository;
+package org.develcorp.learn.library.infrastructure.adapter.output.repository;
 
-import org.develcorp.learn.library.domain.model.Book;
+import org.develcorp.learn.library.domain.model.entity.Book;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 import reactor.core.publisher.Flux;

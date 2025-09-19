@@ -1,9 +1,8 @@
 package org.develcorp.learn.library.domain.model.entity;
 
-
-import org.develcorp.learn.library.domain.model.entity.enum.BookFormat;
-import org.develcorp.learn.library.domain.model.entity.enum.BookStatus;
-import org.develcorp.learn.library.domain.model.entity.enum.BookType;
+import org.develcorp.learn.library.domain.model.entity.enums.BookFormat;
+import org.develcorp.learn.library.domain.model.entity.enums.BookStatus;
+import org.develcorp.learn.library.domain.model.entity.enums.BookType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;

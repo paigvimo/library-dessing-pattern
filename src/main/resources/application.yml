@@ -1,7 +1,9 @@
 spring:
     application:
         name: library-design-pattern
-custom-datasource:
+
+domain-config:
+    database-connection-config:
     h2:
         driver: h2
         protocol: mem

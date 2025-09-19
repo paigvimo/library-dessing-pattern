@@ -1,4 +1,4 @@
-package org.develcorp.learn.library.infrastructure.config;
+package org.develcorp.learn.library.domain.model.config;
 
 import java.util.Map;
 
@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
  * Configuration class to map database properties from application.yml.
  */
 @Configuration
-@ConfigurationProperties(prefix = "custom-datasource.h2")
-public class DatabaseConfig {
+@ConfigurationProperties(prefix = "domain-config.database-connection-config")
+public class DatabaseConnectionConfig {
 
     private String driver;
     private String protocol;

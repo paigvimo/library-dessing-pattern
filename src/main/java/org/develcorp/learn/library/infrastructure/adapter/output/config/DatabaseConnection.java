@@ -1,5 +1,6 @@
-package org.develcorp.learn.library.infrastructure.config;
+package org.develcorp.learn.library.infrastructure.adapter.output.config;
 
+import org.develcorp.learn.library.domain.model.config.DatabaseConnectionConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,11 +20,11 @@ public class DatabaseConnection {
 
     private final ConnectionPool connectionPool;
 
-    private DatabaseConnection(DatabaseConfig databaseConfig) {
+    private DatabaseConnection(DatabaseConnectionConfig dataBaseConnectionConfig) {
         ConnectionFactory connectionFactory = ConnectionFactories.get(ConnectionFactoryOptions.builder()
-            .option(ConnectionFactoryOptions.DRIVER, databaseConfig.getDriver())
-            .option(ConnectionFactoryOptions.PROTOCOL, databaseConfig.getProtocol())
-            .option(ConnectionFactoryOptions.DATABASE, databaseConfig.getDatabase())
+            .option(ConnectionFactoryOptions.DRIVER, dataBaseConnectionConfig.getDriver())
+            .option(ConnectionFactoryOptions.PROTOCOL, dataBaseConnectionConfig.getProtocol())
+            .option(ConnectionFactoryOptions.DATABASE, dataBaseConnectionConfig.getDatabase())
             .build());
 
         ConnectionPoolConfiguration configuration = ConnectionPoolConfiguration.builder(connectionFactory)
@@ -35,8 +36,8 @@ public class DatabaseConnection {
     }
     
     private static class Holder {
-        private static final ApplicationContext CONTEXT = new AnnotationConfigApplicationContext(DatabaseConfig.class);
-        private static final DatabaseConnection INSTANCE = new DatabaseConnection(CONTEXT.getBean(DatabaseConfig.class));
+        private static final ApplicationContext CONTEXT = new AnnotationConfigApplicationContext(DatabaseConnectionConfig.class);
+        private static final DatabaseConnection INSTANCE = new DatabaseConnection(CONTEXT.getBean(DatabaseConnectionConfig.class));
     }
 
     public static DatabaseConnection getInstance() {
