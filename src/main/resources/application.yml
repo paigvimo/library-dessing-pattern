@@ -1,3 +1,10 @@
 spring:
     application:
         name: library-design-pattern
+custom-datasource:
+    h2:
+        driver: h2
+        protocol: mem
+        database: testdb
+        options:
+            DB_CLOSE_DELAY: "-1"
