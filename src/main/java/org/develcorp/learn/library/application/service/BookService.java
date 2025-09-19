@@ -1,6 +1,6 @@
 package org.develcorp.learn.library.application.service;
 
-import org.develcorp.learn.library.application.port.output.BookServiceInputPort;
+import org.develcorp.learn.library.application.port.input.BookServiceInputPort;
 import org.develcorp.learn.library.domain.model.entity.Book;
 import org.develcorp.learn.library.infrastructure.adapter.output.repository.BookRepository;
 import org.springframework.stereotype.Service;

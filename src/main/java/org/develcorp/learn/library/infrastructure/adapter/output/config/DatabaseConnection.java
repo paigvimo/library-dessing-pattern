@@ -9,13 +9,11 @@ import io.r2dbc.pool.ConnectionPoolConfiguration;
 import io.r2dbc.spi.ConnectionFactories;
 import io.r2dbc.spi.ConnectionFactory;
 import io.r2dbc.spi.ConnectionFactoryOptions;
-import lombok.Getter;
 
 /**
  * Singleton class for managing database connections using R2DBC.
  * This class provides a connection pool for efficient database access.
  */
-@Getter
 public class DatabaseConnection {
 
     private final ConnectionPool connectionPool;
@@ -28,7 +26,7 @@ public class DatabaseConnection {
             .build());
 
         ConnectionPoolConfiguration configuration = ConnectionPoolConfiguration.builder(connectionFactory)
-            .maxIdleTime(java.time.Duration.ofMinutes(30)) // Maximum idle time
+            .maxIdleTime(java.time.Duration.ofMinutes(10)) // Maximum idle time
             .maxSize(10)
             .build();
 

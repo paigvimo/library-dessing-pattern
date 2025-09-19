@@ -1,4 +1,4 @@
-package org.develcorp.learn.library.application.port.output;
+package org.develcorp.learn.library.application.port.input;
 
 import org.develcorp.learn.library.domain.model.entity.Book;
 

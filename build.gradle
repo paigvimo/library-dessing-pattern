@@ -24,12 +24,16 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
+dependencies {    
+	compileOnly group: "org.projectlombok", name: "lombok", version: ""
+
+	implementation group: "org.mapstruct", name: "mapstruct", version: "1.6.2"
 	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'io.r2dbc:r2dbc-h2'
+	annotationProcessor group: "org.mapstruct", name: "mapstruct-processor", version: "1.6.2"
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
